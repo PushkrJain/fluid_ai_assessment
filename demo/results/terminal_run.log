@@ -1,0 +1,72 @@
+**********************
+PowerShell transcript start
+Start time: 20261025232335
+Username: PushkarsLaptop\AI
+RunAs User: PushkarsLaptop\AI
+Configuration Name: 
+Machine: PUSHKARSLAPTOP (Microsoft Windows NT 10.0.26300.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Users\AI\AppData\Local\Programs\Kiro\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 27864
+PSVersion: 7.6.6
+PSEdition: Core
+GitCommitId: 7.6.6
+OS: Microsoft Windows 10.0.26300
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is demo\results\terminal_run.log
+(base)
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cAI\x5cDesktop\x5cfluid_ai_assessmentPS C:\Users\AI\Desktop\fluid_ai_assessment> ]633;B
+(base)
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cAI\x5cDesktop\x5cfluid_ai_assessmentPS C:\Users\AI\Desktop\fluid_ai_assessment> ]633;B
+(.venv) $cases = "a","b","c","f"
+(base)
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cAI\x5cDesktop\x5cfluid_ai_assessmentPS C:\Users\AI\Desktop\fluid_ai_assessment> ]633;B
+(.venv) for ($i = 0; $i -lt $cases.Count; $i++) {
+    $c = $cases[$i]
+    $t = Get-Date
+    Write-Host "`n===== $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')  START test_$c ====="
+    python -u demo\run_case.py "demo\test_$c.txt"
+    $sec = [math]::Round(((Get-Date) - $t).TotalSeconds)
+    Write-Host "===== test_$c finished in $sec s ====="
+    if ($i -lt $cases.Count - 1) {
+        Write-Host "Waiting 240 s before the next case..."
+        Start-Sleep -Seconds 240
+    }
+}
+
+===== 2026-10-25 23:23:35  START test_a =====
+
+===== test_a finished in 289 s =====
+Waiting 240 s before the next case...
+
+===== 2026-10-25 23:32:25  START test_b =====
+
+===== test_b finished in 600 s =====
+Waiting 240 s before the next case...
+
+===== 2026-10-25 23:46:25  START test_c =====
+
+===== test_c finished in 198 s =====
+Waiting 240 s before the next case...
+
+===== 2026-10-25 23:53:43  START test_f =====
+
+===== test_f finished in 209 s =====
+(base)
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cAI\x5cDesktop\x5cfluid_ai_assessmentPS C:\Users\AI\Desktop\fluid_ai_assessment> ]633;B
+(base)
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cAI\x5cDesktop\x5cfluid_ai_assessmentPS C:\Users\AI\Desktop\fluid_ai_assessment> ]633;B
+(.venv) Write-Host "`nALL CASES DONE $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+
+ALL CASES DONE 2026-10-25 23:57:12
+(base)
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cAI\x5cDesktop\x5cfluid_ai_assessmentPS C:\Users\AI\Desktop\fluid_ai_assessment> ]633;B
+(.venv) Stop-Transcript
+**********************
+PowerShell transcript end
+End time: 20261025235820
+**********************

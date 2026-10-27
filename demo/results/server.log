@@ -1,0 +1,113 @@
+INFO:     Started server process [23012]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-10-25 23:23:36,119 INFO agent.run run_started run_id=74a6b533339c4f24ad1c0ee011a88f44 request_chars=441
+2026-10-25 23:23:37,596 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:25:51,147 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=134.9 status=completed chars=6366
+2026-10-25 23:25:51,147 INFO agent.run plan_created run_id=74a6b533339c4f24ad1c0ee011a88f44 tasks=6 sections=10 seconds=135.0
+2026-10-25 23:25:51,147 INFO agent.run task_running run_id=74a6b533339c4f24ad1c0ee011a88f44 task=1 handler=analyze_request
+2026-10-25 23:25:51,841 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:26:08,092 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=16.9 status=completed chars=2087
+2026-10-25 23:26:08,092 INFO agent.run task_finished run_id=74a6b533339c4f24ad1c0ee011a88f44 task=1 handler=analyze_request status=completed seconds=16.9
+2026-10-25 23:26:08,092 INFO agent.run task_running run_id=74a6b533339c4f24ad1c0ee011a88f44 task=2 handler=analyze_request
+2026-10-25 23:26:09,201 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:27:00,486 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=52.4 status=completed chars=2497
+2026-10-25 23:27:00,486 INFO agent.run task_finished run_id=74a6b533339c4f24ad1c0ee011a88f44 task=2 handler=analyze_request status=completed seconds=52.4
+2026-10-25 23:27:00,486 INFO agent.run task_running run_id=74a6b533339c4f24ad1c0ee011a88f44 task=3 handler=resolve_assumptions
+2026-10-25 23:27:00,487 INFO agent.run task_finished run_id=74a6b533339c4f24ad1c0ee011a88f44 task=3 handler=resolve_assumptions status=completed seconds=0.0
+2026-10-25 23:27:00,487 INFO agent.run task_running run_id=74a6b533339c4f24ad1c0ee011a88f44 task=4 handler=draft_document
+2026-10-25 23:27:01,066 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:27:54,877 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=54.4 status=completed chars=8690
+2026-10-25 23:27:54,879 INFO agent.run task_finished run_id=74a6b533339c4f24ad1c0ee011a88f44 task=4 handler=draft_document status=completed seconds=54.4
+2026-10-25 23:27:54,879 INFO agent.run task_running run_id=74a6b533339c4f24ad1c0ee011a88f44 task=5 handler=review_document
+2026-10-25 23:27:55,304 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:28:24,900 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=30.0 status=completed chars=1689
+2026-10-25 23:28:24,900 INFO agent.run task_finished run_id=74a6b533339c4f24ad1c0ee011a88f44 task=5 handler=review_document status=completed seconds=30.0
+2026-10-25 23:28:24,900 INFO agent.run task_running run_id=74a6b533339c4f24ad1c0ee011a88f44 task=6 handler=generate_docx
+2026-10-25 23:28:25,077 INFO agent.run task_finished run_id=74a6b533339c4f24ad1c0ee011a88f44 task=6 handler=generate_docx status=completed seconds=0.2
+2026-10-25 23:28:25,077 INFO agent.run run_finished run_id=74a6b533339c4f24ad1c0ee011a88f44 status=completed_with_warnings fallback=False revisions=0
+INFO:     127.0.0.1:64238 - "POST /agent HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53382 - "GET /documents/74a6b533339c4f24ad1c0ee011a88f44.docx HTTP/1.1" 200 OK
+2026-10-25 23:32:25,469 INFO agent.run run_started run_id=4abbe552e8ac4c8585329f9fd2484e5f request_chars=829
+2026-10-25 23:32:26,176 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:34:20,425 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=114.9 status=completed chars=8392
+2026-10-25 23:34:20,425 INFO agent.run plan_created run_id=4abbe552e8ac4c8585329f9fd2484e5f tasks=6 sections=11 seconds=115.0
+2026-10-25 23:34:20,426 INFO agent.run task_running run_id=4abbe552e8ac4c8585329f9fd2484e5f task=1 handler=analyze_request
+2026-10-25 23:34:21,648 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:35:30,342 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=69.9 status=completed chars=2035
+2026-10-25 23:35:30,342 INFO agent.run task_finished run_id=4abbe552e8ac4c8585329f9fd2484e5f task=1 handler=analyze_request status=completed seconds=69.9
+2026-10-25 23:35:30,342 INFO agent.run task_running run_id=4abbe552e8ac4c8585329f9fd2484e5f task=2 handler=analyze_request
+2026-10-25 23:35:32,861 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:35:54,134 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=23.8 status=completed chars=3035
+2026-10-25 23:35:54,134 INFO agent.run task_finished run_id=4abbe552e8ac4c8585329f9fd2484e5f task=2 handler=analyze_request status=completed seconds=23.8
+2026-10-25 23:35:54,134 INFO agent.run task_running run_id=4abbe552e8ac4c8585329f9fd2484e5f task=3 handler=resolve_assumptions
+2026-10-25 23:35:54,134 INFO agent.run task_finished run_id=4abbe552e8ac4c8585329f9fd2484e5f task=3 handler=resolve_assumptions status=completed seconds=0.0
+2026-10-25 23:35:54,134 INFO agent.run task_running run_id=4abbe552e8ac4c8585329f9fd2484e5f task=4 handler=draft_document
+2026-10-25 23:35:55,104 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:37:11,789 WARNING agent.llm llm_transient_error attempt=1/4 error=APIConnectionError status=? -> retrying
+2026-10-25 23:37:11,790 INFO agent.llm llm_backoff attempt=1 sleep=1.7s
+2026-10-25 23:37:13,543 WARNING agent.llm llm_transient_error attempt=2/4 error=APIConnectionError status=? -> retrying
+2026-10-25 23:37:13,544 INFO agent.llm llm_backoff attempt=2 sleep=4.9s
+2026-10-25 23:37:19,104 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:39:01,165 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=3 seconds=102.8 status=completed chars=14489
+2026-10-25 23:39:01,168 INFO agent.run task_finished run_id=4abbe552e8ac4c8585329f9fd2484e5f task=4 handler=draft_document status=completed seconds=187.0
+2026-10-25 23:39:01,168 INFO agent.run task_running run_id=4abbe552e8ac4c8585329f9fd2484e5f task=5 handler=review_document
+2026-10-25 23:39:02,604 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:40:32,895 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=91.7 status=completed chars=3977
+2026-10-25 23:40:36,903 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:41:38,629 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=65.7 status=completed chars=15731
+2026-10-25 23:41:39,628 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:43:23,712 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=105.1 status=completed chars=3788
+2026-10-25 23:43:23,712 INFO agent.run task_finished run_id=4abbe552e8ac4c8585329f9fd2484e5f task=5 handler=review_document status=completed seconds=262.5
+2026-10-25 23:43:23,713 INFO agent.run task_running run_id=4abbe552e8ac4c8585329f9fd2484e5f task=6 handler=generate_docx
+2026-10-25 23:43:23,964 INFO agent.run task_finished run_id=4abbe552e8ac4c8585329f9fd2484e5f task=6 handler=generate_docx status=completed seconds=0.3
+2026-10-25 23:43:23,964 INFO agent.run run_finished run_id=4abbe552e8ac4c8585329f9fd2484e5f status=completed_with_warnings fallback=False revisions=1
+2026-10-25 23:46:25,821 INFO agent.run run_started run_id=1ae3a15238764164bf1a85bd09dc7223 request_chars=791
+2026-10-25 23:46:26,496 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:46:59,846 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=34.0 status=completed chars=4738
+2026-10-25 23:46:59,846 INFO agent.run plan_created run_id=1ae3a15238764164bf1a85bd09dc7223 tasks=4 sections=8 seconds=34.0
+2026-10-25 23:46:59,846 INFO agent.run task_running run_id=1ae3a15238764164bf1a85bd09dc7223 task=1 handler=analyze_request
+2026-10-25 23:47:00,856 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:47:42,675 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=42.8 status=completed chars=1163
+2026-10-25 23:47:42,676 INFO agent.run task_finished run_id=1ae3a15238764164bf1a85bd09dc7223 task=1 handler=analyze_request status=completed seconds=42.8
+2026-10-25 23:47:42,676 INFO agent.run task_running run_id=1ae3a15238764164bf1a85bd09dc7223 task=2 handler=draft_document
+2026-10-25 23:47:43,191 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:48:02,455 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=19.8 status=completed chars=4182
+2026-10-25 23:48:02,457 INFO agent.run task_finished run_id=1ae3a15238764164bf1a85bd09dc7223 task=2 handler=draft_document status=completed seconds=19.8
+2026-10-25 23:48:02,457 INFO agent.run task_running run_id=1ae3a15238764164bf1a85bd09dc7223 task=3 handler=review_document
+2026-10-25 23:48:02,903 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:48:54,492 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=52.0 status=completed chars=1099
+2026-10-25 23:48:55,502 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:49:01,803 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=7.3 status=completed chars=849
+2026-10-25 23:49:02,179 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:49:43,550 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=41.7 status=completed chars=2772
+2026-10-25 23:49:43,551 INFO agent.run task_finished run_id=1ae3a15238764164bf1a85bd09dc7223 task=3 handler=review_document status=completed seconds=101.1
+2026-10-25 23:49:43,551 INFO agent.run task_running run_id=1ae3a15238764164bf1a85bd09dc7223 task=4 handler=generate_docx
+2026-10-25 23:49:43,671 INFO agent.run task_finished run_id=1ae3a15238764164bf1a85bd09dc7223 task=4 handler=generate_docx status=completed seconds=0.1
+2026-10-25 23:49:43,671 INFO agent.run run_finished run_id=1ae3a15238764164bf1a85bd09dc7223 status=completed_with_warnings fallback=False revisions=1
+INFO:     127.0.0.1:60244 - "POST /agent HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62553 - "GET /documents/1ae3a15238764164bf1a85bd09dc7223.docx HTTP/1.1" 200 OK
+2026-10-25 23:53:44,081 INFO agent.run run_started run_id=8047da69d8a742cbbd59954631fcd34e request_chars=308
+2026-10-25 23:53:46,111 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:54:49,936 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=65.8 status=completed chars=5137
+2026-10-25 23:54:49,937 INFO agent.run plan_created run_id=8047da69d8a742cbbd59954631fcd34e tasks=5 sections=8 seconds=65.9
+2026-10-25 23:54:49,937 INFO agent.run task_running run_id=8047da69d8a742cbbd59954631fcd34e task=1 handler=analyze_request
+2026-10-25 23:54:50,943 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:54:56,465 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=6.5 status=completed chars=1613
+2026-10-25 23:54:56,466 INFO agent.run task_finished run_id=8047da69d8a742cbbd59954631fcd34e task=1 handler=analyze_request status=completed seconds=6.5
+2026-10-25 23:54:56,466 INFO agent.run task_running run_id=8047da69d8a742cbbd59954631fcd34e task=2 handler=resolve_assumptions
+2026-10-25 23:54:56,466 INFO agent.run task_finished run_id=8047da69d8a742cbbd59954631fcd34e task=2 handler=resolve_assumptions status=completed seconds=0.0
+2026-10-25 23:54:56,466 INFO agent.run task_running run_id=8047da69d8a742cbbd59954631fcd34e task=3 handler=draft_document
+2026-10-25 23:54:56,834 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:56:21,476 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=85.0 status=completed chars=13352
+2026-10-25 23:56:21,477 INFO agent.run task_finished run_id=8047da69d8a742cbbd59954631fcd34e task=3 handler=draft_document status=completed seconds=85.0
+2026-10-25 23:56:21,477 INFO agent.run task_running run_id=8047da69d8a742cbbd59954631fcd34e task=4 handler=review_document
+2026-10-25 23:56:24,860 INFO httpx2 HTTP Request: POST https://openrouter.ai/api/v1/responses "HTTP/1.1 200 OK"
+2026-10-25 23:57:11,871 INFO agent.llm llm_call model=nvidia/nemotron-3-ultra-550b-a55b:free attempt=1 seconds=50.4 status=completed chars=1650
+2026-10-25 23:57:11,871 INFO agent.run task_finished run_id=8047da69d8a742cbbd59954631fcd34e task=4 handler=review_document status=completed seconds=50.4
+2026-10-25 23:57:11,871 INFO agent.run task_running run_id=8047da69d8a742cbbd59954631fcd34e task=5 handler=generate_docx
+2026-10-25 23:57:12,071 INFO agent.run task_finished run_id=8047da69d8a742cbbd59954631fcd34e task=5 handler=generate_docx status=completed seconds=0.2
+2026-10-25 23:57:12,072 INFO agent.run run_finished run_id=8047da69d8a742cbbd59954631fcd34e status=completed_with_warnings fallback=False revisions=0
+INFO:     127.0.0.1:63190 - "POST /agent HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50143 - "GET /documents/8047da69d8a742cbbd59954631fcd34e.docx HTTP/1.1" 200 OK

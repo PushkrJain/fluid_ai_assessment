@@ -1,9 +1,7 @@
 .env
 .venv/
-outputs/
 __pycache__/
 .pytest_cache/
-demo/results/
 tests/live_results/
 .coverage
 htmlcov/

@@ -1,0 +1,128 @@
+{
+  "run_id": "1ae3a15238764164bf1a85bd09dc7223",
+  "status": "completed_with_warnings",
+  "summary": "Generated a meeting minutes ('Northstar Team Meeting Minutes - 14 October 2026') for Northstar team members and stakeholders. 4/4 planned tasks completed; 1 revision(s) performed. Review score 82/100 with 3 remaining issue(s). 6 open question(s) need human confirmation.",
+  "document_type": "meeting minutes",
+  "plan": [
+    {
+      "id": 1,
+      "title": "Categorise meeting notes into decisions, actions, proposals, and questions",
+      "description": "Analyse the raw notes and classify each item as a confirmed decision, action item (with owner and due date if stated), proposal, or unresolved question. Flag any item that appears to be a decision but lacks explicit confirmation. Output a structured list for each category.",
+      "handler": "analyze_request",
+      "dependencies": [],
+      "expected_output": "Structured classification: confirmed_decisions, action_items, proposals, unresolved_questions",
+      "status": "completed",
+      "result_summary": "Analyzed meeting notes and classified items into confirmed decisions, action items, proposals, and unresolved questions. No confirmed decisions were explicitly recorded. Two action items identified with owners, one with a due date. Several proposals and unresolved questions remain.",
+      "error": null
+    },
+    {
+      "id": 2,
+      "title": "Draft the meeting minutes document",
+      "description": "Write the full minutes using the required sections. Populate each section with the classified content from Task 1. Use professional minutes language (e.g., 'Maya noted...', 'Leon agreed to...', 'The team discussed...'). Ensure no invented owners, deadlines, or decisions appear. Mark tentative items clearly.",
+      "handler": "draft_document",
+      "dependencies": [
+        1
+      ],
+      "expected_output": "Complete draft minutes text",
+      "status": "completed",
+      "result_summary": "Drafted 8 sections",
+      "error": null
+    },
+    {
+      "id": 3,
+      "title": "Review minutes against requirements",
+      "description": "Check that the draft: (a) separates confirmed decisions, action items, proposals, and unresolved questions; (b) contains no invented decisions, owners, or deadlines; (c) reflects only the provided notes; (d) uses the required sections. Note any violations for correction.",
+      "handler": "review_document",
+      "dependencies": [
+        2
+      ],
+      "expected_output": "Review report with pass/fail per requirement and any required revisions",
+      "status": "completed",
+      "result_summary": "Score 82; 2 review(s); 1 revision(s); 3 remaining issue(s)",
+      "error": null
+    },
+    {
+      "id": 4,
+      "title": "Generate Word document",
+      "description": "Produce the final .docx file from the approved draft.",
+      "handler": "generate_docx",
+      "dependencies": [
+        3
+      ],
+      "expected_output": "Verified .docx file",
+      "status": "completed",
+      "result_summary": "Saved and verified 1ae3a15238764164bf1a85bd09dc7223.docx (13 headings)",
+      "error": null
+    }
+  ],
+  "assumptions": [
+    {
+      "statement": "The meeting took place on 14 October 2026 with only the three named attendees",
+      "category": "assumption",
+      "impact": "Attendee list and quorum are based solely on the notes; no additional participants are recorded"
+    },
+    {
+      "statement": "The notes provided are a complete and accurate record of what was discussed",
+      "category": "assumption",
+      "impact": "Minutes can only reflect the information explicitly given; any missing context remains an open question"
+    },
+    {
+      "statement": "No decisions were formally approved during the meeting",
+      "category": "assumption",
+      "impact": "All items labelled as decisions in the notes are treated as proposals or intentions unless explicitly confirmed"
+    }
+  ],
+  "open_questions": [
+    "Who will own training materials? (explicitly unresolved)",
+    "Is the 2 November pilot confirmed? (discussed but not confirmed)",
+    "Is the next meeting on 23 October confirmed? (tentative only)",
+    "What is the deadline for Leon's SSO integration check? (no deadline agreed)",
+    "Which department will be the pilot department? (not specified)",
+    "What is the target date for broad rollout after pilot? (not discussed)"
+  ],
+  "review": {
+    "score": 82,
+    "identified_gaps": [
+      "Maya's statement 'product will simplify the first screen by 21 Oct' is presented as an agreed action item with a committed deadline and owner, but the notes only record it as a product intention, not a team-agreed action item.",
+      "The bug report requirement is labelled a 'Confirmed Decision' with 'The team agreed', yet the notes merely state 'Bug reports should have severity and reproduction steps' without explicit confirmation of team agreement.",
+      "The Proposals section rephrases 'Operations wants pilot with one department' as 'proposed by operations', shifting a stated preference into a proposal without clarification.",
+      "The Discussion Summary adds 'The team agreed that bug reports should include...' which infers agreement not explicitly recorded in the notes."
+    ],
+    "failed_checks": [
+      "No invented decisions, owners, or deadlines",
+      "Distinguish confirmed vs proposed vs unresolved items",
+      "Reflect only what is stated in the notes"
+    ],
+    "sections_to_revise": [
+      "Action Items",
+      "Confirmed Decisions",
+      "Proposals / Items for Further Discussion",
+      "Discussion Summary"
+    ],
+    "recommended_corrections": [
+      "In Action Items, change Maya's row: remove 'Agreed' status, set Due Date to '21 October 2026 (product intention, not team commitment)', and add a note that this reflects Maya's statement, not a confirmed action item.",
+      "In Confirmed Decisions, either remove the 'team agreed' phrasing and label the bullet as 'Bug reports must include severity and reproduction steps (stated as requirement; confirmation needed)' or move it to Proposals/Unresolved if agreement is not explicit.",
+      "In Proposals, change the pilot bullet to 'Operations prefers a pilot with one department before broad rollout (stated preference; not yet a formal proposal)' to match the notes.",
+      "In Discussion Summary, replace 'The team agreed that bug reports should include...' with 'The team noted that bug reports should include severity and reproduction steps.'"
+    ],
+    "remaining_issues": [
+      "Whether the bug report requirement was formally agreed or merely discussed cannot be determined from the notes; a human must confirm.",
+      "The target department for the pilot and broad rollout timeline remain open and should be tracked.",
+      "The note taker is unspecified; this is a minor omission but not critical."
+    ],
+    "requirements_covered": [
+      "Professional meeting minutes format with all required sections present",
+      "Clear separation of confirmed decisions, action items, proposals, and unresolved questions",
+      "No invented attendees, dates, or additional decisions beyond the notes",
+      "Factual reflection of the provided notes with appropriate caveats"
+    ]
+  },
+  "revisions_performed": 1,
+  "fallback_used": false,
+  "warnings": [],
+  "provider": "openrouter",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "document_filename": "1ae3a15238764164bf1a85bd09dc7223.docx",
+  "download_url": "/documents/1ae3a15238764164bf1a85bd09dc7223.docx",
+  "error": null
+}
