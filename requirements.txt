@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+python-docx
+pydantic>=2
+openai>=1.66
+python-dotenv
+pytest
+httpx
